@@ -135,8 +135,7 @@ public class Array2Example {
 		}
 		
 		System.out.println(Arrays.deepToString(arr));
-		// 이것 저것 적고 공부하고 집갔음.
-		// 집에와서 복슴 자습 문제풀이했음.
+
 
 	}
 
