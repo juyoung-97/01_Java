@@ -179,13 +179,58 @@ public class PracticeService {
 //		[실행 화면]
 //		주민등록번호(-포함) : 123456-1234567
 //		123456-1******
-		 
+
 		System.out.print("주민등록번호(-포함) : ");
 		String input = sc.nextLine();
 		char[] number = new char[input.length()];
-		for(int i = 0; i < input.length(); i++) {
+		for (int i = 0; i < input.length(); i++) {
+
 			number[i] = input.charAt(i);
+
+			if (i < 8) {
+				System.out.print(number[i]);
+			} else {
+				System.out.print("*");
+			}
+
 		}
+
+	}
+
+	public void practice8() {
+//		3이상인 홀수를 입력 받아 배열의 중간까지는 1부터 1씩 증가하여 오름차순으로 값을 넣고,
+//		중간 이후부터 끝까지는 1씩 감소하여 내림차순으로 값을 넣어 출력하세요.
+//		단, 입력한 정수가 홀수가 아니거나 3 미만일 경우 “다시 입력하세요”를 출력하고
+//		다시 정수를 받도록 하세요.
+//
+//		[실행 화면]
+//		정수 : 4
+//		다시 입력하세요.
+//		정수 : -6
+//		다시 입력하세요.
+//		정수 : 5
+//		1, 2, 3, 2, 1
+//		5일땐 3부터 7일땐 4부터 9일땐 5부터 11일떈 6부터
+
+		boolean running = false;
+		while (!running) {
+			System.out.print("정수 : ");
+
+			int input = sc.nextInt();
+
+			if (input % 2 == 0 || input < 3) {
+				System.out.println("다시 입력하세요.");
+			} else {
+				running = true;
+			}
+			int[] arr = new int[input];
+			for(int i = 0; i < arr.length; i++) {
+				arr[i] = i + 1;
+				System.out.print(arr[i] + " ");
+			}
+
+		}
+
 
 	}
 
