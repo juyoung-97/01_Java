@@ -210,7 +210,8 @@ public class PracticeService {
 //		다시 입력하세요.
 //		정수 : 5
 //		1, 2, 3, 2, 1
-//		5일땐 3부터 7일땐 4부터 9일땐 5부터 11일떈 6부터
+//		5일땐 3부터 7일땐 4부터 9일땐 5부터 11일떈 6부터 == 5 / 2 + 1 = 3
+		// 7 / 2 + 1 = 4
 
 		boolean running = false;
 		while (!running) {
@@ -219,14 +220,21 @@ public class PracticeService {
 			int input = sc.nextInt();
 
 			if (input % 2 == 0 || input < 3) {
-				System.out.println("다시 입력하세요.");
+				System.out.print("다시 입력하세요.");
+				System.out.println();
 			} else {
+				int[] arr = new int[input];
+				for(int i = 0; i < input / 2 + 1; i++) {
+					arr[i] = i + 1;
+					System.out.print(arr[i] + " ");
+					
 				running = true;
 			}
-			int[] arr = new int[input];
-			for(int i = 0; i < arr.length; i++) {
-				arr[i] = i + 1;
-				System.out.print(arr[i] + " ");
+				for(int i = input / 2 + 1; i <arr.length; i++) {
+					arr[i] = arr[i] - i;
+					System.out.print(arr[i] + " ");
+				}
+
 			}
 
 		}
