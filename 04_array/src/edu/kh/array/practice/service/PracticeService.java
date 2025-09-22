@@ -265,6 +265,12 @@ public class PracticeService {
 //
 //		[실행 화면]
 //		발생한 난수 : 9 7 6 2 5 10 7 2 9 6
+		int[] arr = new int[10];
+		System.out.print("발생한 난수 : ");
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = (int) (Math.random() * 10 + 1);
+			System.out.print(arr[i] + " ");
+		}
 
 	}
 
@@ -304,7 +310,7 @@ public class PracticeService {
 		}
 
 		System.out.println("최대값 : " + max);
-		System.out.println("최th값 : " + min);
+		System.out.println("최소값 : " + min);
 
 	}
 
@@ -323,9 +329,14 @@ public class PracticeService {
 				if (arr[i] == arr[j]) {
 					i--;
 					break;
+
 				}
+
 			}
-			System.out.print(arr[i]);
+
+		}
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
 
 		}
 
@@ -350,12 +361,12 @@ public class PracticeService {
 				}
 
 			}
-			Arrays.sort(lotto); // 오름차순 정렬
-			// 출력
-//			for (int i = 0; i < lotto.length; i++) {
-//				System.out.print(lotto + " ");
-//			}
 
+		}
+		Arrays.sort(lotto); // 오름차순 정렬
+		// 출력
+		for (int i = 0; i < lotto.length; i++) {
+			System.out.print(lotto[i] + " ");
 		}
 
 	}
@@ -368,6 +379,41 @@ public class PracticeService {
 //		문자열 : application
 //		문자열에 있는 문자 : a, p, l, i, c, t, o, n
 //		문자 개수 : 8
+
+		System.out.print("문자열 : ");
+		String str = sc.nextLine();
+
+		char[] arr = new char[str.length()];
+
+		for (int i = 0; i < str.length(); i++) {
+			arr[i] = str.charAt(i);
+
+		}
+
+		int count = 0;
+
+		System.out.print("문자열에 있는 문자 : ");
+
+		for (int i = 0; i < arr.length; i++) {
+			boolean flag = true;
+			for (int j = 0; j < i; j++) {
+				if (arr[j] == arr[i]) {
+					flag = false;
+					break;
+				}
+			}
+			if (flag) {
+				if(i == 0) {
+					System.out.print(arr[i]);
+				} else {
+					System.out.print(", " + arr[i]);
+				}
+				count++;
+			}
+
+		}
+		System.out.println();
+		System.out.print("문자 개수 : " + count);
 
 	}
 
@@ -433,17 +479,13 @@ public class PracticeService {
 					} else { // 인덱스의 값이 기존배열보다 큰 경우(새로운 값 입력받기)
 						System.out.print((i + 1) + "번째 문자열 : ");
 						newArr[i] = sc.nextLine();
-						
 
 					}
 				}
-				
+
 				// 8. 기존 배열 공간을 참조하던 변수 arr에
 				// 새로운 배열 공간의 주소를 가진 newArr 대입(얕은 복사)
 				arr = newArr;
-				
-				
-				
 
 			} else if (ch == 'n' || ch == 'N') { // 값을 더 입력하지 않을 경우
 				break; // while 반복문 종료
@@ -453,8 +495,8 @@ public class PracticeService {
 
 			}
 
-		} //while 문 끝
-		
+		} // while 문 끝
+
 		// 9. 배열값 모두 출력
 		System.out.println(Arrays.toString(arr));
 
