@@ -47,20 +47,43 @@ public class Student extends Person{
 	public void setClassroom(int classroom) {
 		this.classroom = classroom;
 	}
+
 	public Student(String name, int age, String nationality, int grade, int classroom) {
-		super();
-//		this.name = name;
-//		this.age = age;
-//		this.nationality = nationality;
+		
+		// this.name = name;
+		// this.age = age;
+		// this.nationality = nationality;
+		// 왜 안될까?
+		// -> this 참조변수는 본인 자신만을 의미함
+		// 부모의 고유 필드인 name, age, nationality
+		// this 가 참조하고있는 주소의 필드가 아니기 때문에
+		// this 참조변수를 이용하여 직접 접근 불가
+		
+		
+		// super 생성자는 무조건 첫줄에 있어야함
+		super(name, age, nationality);
+		
+//		setName(name);
+//		setAge(age);
+//		setNationality(nationality);
+//		setter 메서드를 이용하여 초기화 가능은 하나 비효율적
 		this.grade = grade;
 		this.classroom = classroom;
 	}
 	public Student() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
-	
-	
+	@Override
+	public String toString() {
+		// super : super 참조변수
+		// -> 상속관계에서 부모객체를 가리키는 참조변수
+		return super.toString() + " / " + grade + " / " + classroom;
+	}
+
 }
+	
+	
+	
+	
+	
+
