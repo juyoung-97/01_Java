@@ -15,9 +15,10 @@ public class Run {
 		 books[1] = new Textbook("자바 프로그래밍", "James Gosling", "컴퓨터 과학");
 		 books[2] = new Poetry("우리들의 사랑시", "김소월", 30);
 		 
-		 System.out.println(books[0].displayInfo());
-		 System.out.println(books[1]);
-		 System.out.println(books[2]);
+			for (Book book : books) {
+				book.displayInfo();
+				System.out.println();// 개행
+			}
 	}
 
 }

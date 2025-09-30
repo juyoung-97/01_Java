@@ -29,10 +29,7 @@ public abstract class Person {
 
 	public abstract String getInfo();
 
-	@Override
-	public String toString() {
-		return "ID : " + id + " , 이름 : " + name;
-	}
+
 	
 	
 

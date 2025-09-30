@@ -32,9 +32,5 @@ public abstract class Book {
 
 	public abstract void displayInfo();
 	
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return "제목 : " + title + " / 저자 : " + author;
-	}
+
 }

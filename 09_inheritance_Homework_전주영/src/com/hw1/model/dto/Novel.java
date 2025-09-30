@@ -23,8 +23,9 @@ public class Novel extends Book{
 
 	@Override
 	public void displayInfo() {
-		System.out.println(	"[소설] " + super.toString() + " / 장르 : " + genre);		
-	}
+		System.out.printf("[소설] 제목 : %s / 저자 : %s / 장르 : %s", 
+						super.getTitle(), super.getAuthor(), genre );
+	} 
 
 	
 }
