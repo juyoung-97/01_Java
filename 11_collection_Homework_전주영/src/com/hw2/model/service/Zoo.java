@@ -8,45 +8,49 @@ import com.hw2.model.dto.Animal;
 
 public class Zoo {
 	
-	private Scanner sc = new Scanner(System.in);
-	
-	private List<Animal> animals = new ArrayList<>();
-	
+	private List<Animal> animals; // null
 	
 	public Zoo() {
-		// TODO Auto-generated constructor stub
+		animals = new ArrayList<Animal>();
 	}
-	
+
 	public void addAnimal(Animal animal) {
-		animals.add(animals.get(0));
+		animals.add(animal);
 	}
 	
 	public void showAnimals() {
-		
+		System.out.println("동물들의 울음소리를 들어보세요~");
+		for(Animal animal : animals) {
+			animal.sound();
+		}
 	}
 	
 	public void displayMenu() {
-
-		System.out.println("****** KH 동물원 ******");
-		int menuNum = 0;
 		
-		while(menuNum != 2) {
-			System.out.println("원하는 작업을 선택하세요 : ");
+		Scanner sc = new Scanner(System.in);
+		
+		int menuNum = 0;
+		do {
+			System.out.println("***** KH 동물원 ******");
+			System.out.println("원하는 작업을 선택하세요");
 			System.out.println("1. 동물들의 울음소리 듣기");
 			System.out.println("2. 종료");
-			System.out.print("선택: ");
+			System.out.print("선택 : ");
+			
 			menuNum = sc.nextInt();
-			sc.nextLine();
 			
 			switch(menuNum) {
-			case 1: System.out.println("동물들의 울음소리를 들어보세요:");
-			case 2: System.out.println("프로그램을 종료합니다."); break;
+			case 1 : showAnimals(); break;
+			case 2 : System.out.println("프로그램 종료합니다"); break;
+			default : System.out.println("잘못된 선택입니다. 다시 선택해주세요...");
 			}
-		}
 			
+			
+		} while( menuNum != 2);
+		
 		
 		
 	}
-
-
+	
+	
 }
