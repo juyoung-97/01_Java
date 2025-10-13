@@ -132,7 +132,7 @@ public class MapService {
 		
 		// 향상된 for 문 이용해서 key 가 "id"에 대응되는 value 값 전부 출력하기
 		for(Map<String, Object> temp : list) {
-			System.out.println(temp.get("id"));
+			System.out.println(temp.get("id")); 
 		}
 		
 		
